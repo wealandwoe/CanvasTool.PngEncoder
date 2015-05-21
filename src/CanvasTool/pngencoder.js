@@ -1913,7 +1913,9 @@ CanvasTool.PngEncoder.prototype.rgb2y_ = function(red, green, blue) {
  * @private
  */
 CanvasTool.PngEncoder.prototype.rgb2str_ = function(color) {
-  return color.slice(0, 3).map(this.fromCharCode_).join('');
+  var i = 0, s = "";
+  for(; i< 3; i++) {s += String.fromCharCode(color[i]).charAt(0);}
+  return s;
 };
 
 /**
@@ -1923,7 +1925,9 @@ CanvasTool.PngEncoder.prototype.rgb2str_ = function(color) {
  * @private
  */
 CanvasTool.PngEncoder.prototype.rgba2str_ = function(color) {
-  return color.map(this.fromCharCode_).join('');
+  var i = 0, s = "", l = color.length;
+  for(; i< l; i++) {s += String.fromCharCode(color[i]).charAt(0);}
+  return s;
 };
 
 /**
